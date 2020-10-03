@@ -1,7 +1,7 @@
 <x-admin-master>
 @section('content')
 
-<h1>Olá, {{$user->name}}</h1>
+<h2>Olá, {{$user->name}}</h2>
 
 <div class="row mt-3">
 
@@ -22,7 +22,7 @@
         </div>
         <div class="form-group">
             <label for="name">Nome do Usuário</label>
-            <input type="text" class="form-control" id="username" value="">
+            <input type="text" class="form-control" id="username" value="{{$user->username}}">
           </div>
           <div class="form-group"
           <label for="email">Email</label>
