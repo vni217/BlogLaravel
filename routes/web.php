@@ -30,7 +30,12 @@ Route::middleware('auth')->group(function(){
     Route::get('/admin/post/create', 'PostController@create')->name('post.create');
     Route::post('/admin/posts', 'PostController@store')->name('post.store');
 
+    Route::get('/admin/users/{user}/profile', 'UserController@show')->name('user.profile.show');
+
     Route::get('/admin/post/{post}/edit', 'PostController@edit')->name('post.edit');
     Route::delete('/admin/posts/{post}/destroy', 'PostController@destroy')->name('post.destroy');
     Route::patch('/admin/post/{post}/update', 'PostController@update')->name('post.update');
+
+
+
 });
