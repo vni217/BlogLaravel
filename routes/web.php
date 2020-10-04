@@ -31,6 +31,8 @@ Route::middleware('auth')->group(function(){
     Route::post('/admin/posts', 'PostController@store')->name('post.store');
 
     Route::get('/admin/users/{user}/profile', 'UserController@show')->name('user.profile.show');
+    Route::put('/admin/users/{user}/update', 'UserController@update')->name('user.profile.update');
+
 
     Route::get('/admin/post/{post}/edit', 'PostController@edit')->name('post.edit');
     Route::delete('/admin/posts/{post}/destroy', 'PostController@destroy')->name('post.destroy');
