@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'name', 'email', 'password',
+        'username', 'name', 'avatar', 'email', 'password',
     ];
 
     /**
@@ -42,6 +42,14 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($value);
 
     }
+
+    public function getPostImageAttribute($value){
+
+        return asset($value);
+
+    }
+
+
 
     public function posts(){
 
