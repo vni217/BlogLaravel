@@ -37,6 +37,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    
+
+
     public function setPasswordAttribute($value){
 
         $this->attributes['password'] = bcrypt($value);
@@ -48,7 +51,6 @@ class User extends Authenticatable
         return asset($value);
 
     }
-
 
 
     public function posts(){
@@ -76,5 +78,14 @@ class User extends Authenticatable
         }
         return false;
     }
+
+    public function getAvatarAttribute($value)
+    {
+    if (strpos($value, 'https://') !== FALSE || strpos($value, 'http://') !== FALSE) {
+    return $value;
+    }
+    return asset('storage/' . $value);
+    }
+
 
 }

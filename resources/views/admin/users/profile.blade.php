@@ -13,7 +13,7 @@
             @csrf
               <div>
                 <div>
-                  <img class="w-35 img-thumbnail circle" src="{{$user->avatar}}">
+                  <img class="w-30 img-thumbnail rounded-circle" src="{{$user->avatar}}">
               </div>
             </div>
                 
